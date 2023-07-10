@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <script src="main.js" defer></script>
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+
+<body>
+
+  <main>
+    <div class="card-wrap">
+      <div class="card-container">
+        <div class="card front">
+          <img src="images/card-logo.svg" class="card-logo" alt="card logo">
+          <p class="card-number">0000 0000 0000 0000</p>
+          <p class="card-name">Jane Appleseed</p>
+          <p class="card-date"><span class="card-month">00</span>/<span class="card-year">00</span></p>
+        </div>
+        <div class="card back">
+          <p class="card-cvc">000</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-wrap">
+      <form id="card-form">
+        <div class="form-row">
+          <label for="name">Cardholder Name</label>
+          <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed">
+          <span class="error name-error"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="number">Card Number</label>
+          <input type="text" inputmode="numeric" name="number" id="number"  pattern="[0-9]+" maxlength="16" placeholder="e.g. 1234 5678 9123 0000">
+          <span class="error number-error"></span>
+        </div>
+
+        <div class="form-row">
+            <div>
+              <label>Exp. Date (MM/YY)</label>
+              
+              <input class="form-date" type="text" inputmode="numeric" name="month" id="month" pattern="[0-9]+" maxlength="2" placeholder="MM">
+              <input class="form-date" type="text" inputmode="numeric" name="year" id="year" pattern="[0-9]+" maxlength="2" placeholder="YY">
+              <span class="error date-error"></span>
+            </div>
+
+      
+          <div>
+            <label for="cvc">CVC</label>
+            <input class="form-cvc" type="text" inputmode="numeric" name="cvc" id="cvc" pattern="[0-9]+" maxlength="3" placeholder="e.g. 123">
+            <span class="error cvc-error"></span>
+          </div>
+        </div>
+
+        <button type="submit">Confirm</button>
+      </form>
+      <div class="complete-state">
+    
+        <img src="images/icon-complete.svg" alt="complete">
+        <h1>Thank you!</h1>
+        <p>We've added your card details</p>
+        <button type="button" id="complete">Continue</button>
+      </div>
+    </div>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/confett0">Confett0</a>.
+  </div>
+</body>
+
+</html>

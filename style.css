@@ -1,0 +1,276 @@
+:root {
+    --dark-color: hsl(278, 68%, 11%);
+    --light-color: hsl(270, 3%, 87%);
+    --medium-color: hsl(279, 6%, 55%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Space Grotesk';
+    font-size: 1.1rem;
+}
+
+main {
+    display: flex;
+    min-height: calc(100vh - 2rem);
+}
+
+.card-wrap {
+    background: url(images/bg-main-desktop.png) top left no-repeat;
+    position: relative;
+    width: 50%;
+}
+
+.card {
+    border-radius: 0.9rem;
+    color: #fff;
+    display: grid;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    height: 15.3rem;
+    width: 28rem;
+    position: absolute;
+}
+
+.front {
+    background: url(images/bg-card-front.png);
+    background-position: center;
+    background-size: cover;
+    grid-template: 2fr 1fr 1fr / 1fr 1fr;
+    align-items: end;
+    top: 10%;
+    right: 15%;
+    padding: 1.8rem;
+    text-transform: uppercase;
+}
+
+.back {
+    background: url(images/bg-card-back.png);
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    justify-content: end;
+    top: 52%;
+    right: 5%;
+    padding: 3rem;
+}
+
+.card-logo {
+    align-self: flex-start;
+}
+
+.card-number {
+    justify-self: center;
+    grid-column: 1 / span 2;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+}
+
+.card-date {
+    justify-self: end;
+}
+
+.form-wrap {
+    display: grid;
+    place-items: center;
+    width: 50%;
+}
+
+form {
+    width: 26rem;
+}
+
+.form-row {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.form-row label {
+    color: var(--dark-color);
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+input {
+    border: 1px solid var(--light-color);
+    border-radius: 0.4rem;
+    color: var(--dark-color);
+    font-family: 'Space Grotesk';
+    font-size: 1rem;
+    outline: none;
+    padding: 0.7rem;
+    width: 100%;
+}
+
+input:focus {
+    border: 1px solid var(--dark-color);
+}
+
+input:invalid {
+    border: 1px solid hsl(0, 100%, 66%);
+}
+
+.form-row:last-of-type {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-row .form-date {
+    width: 6rem;
+}
+
+.form-row .form-cvc {
+    width: 10rem;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--medium-color);
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--medium-color);
+}
+
+button {
+    background-color: var(--dark-color);
+    border: none;
+    border-radius: 0.4rem;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    transition: 400ms ease-in-out;
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--medium-color);
+}
+
+.complete-state {
+    display: none;
+    text-align: center;
+}
+
+.complete-state img {
+    margin-bottom: 2rem;
+    width: 4rem;
+}
+
+.complete-state h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.complete-state p {
+    color: var(--medium-color);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.complete-state button {
+    width: 20rem;
+}
+
+.error {
+    color: hsl(0, 100%, 66%);
+    font-size: 0.7rem;
+}
+
+.attribution {
+    background-color: #252525;
+    color: #fff;
+    height: 2rem;
+    font-size: 0.7rem;
+    padding: 0.7rem;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--medium-color);
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    main {
+        flex-direction: column;
+        gap: 4.5rem;
+    }
+
+    .card-wrap,
+    .form-wrap {
+        width: 100%;
+    }
+
+    .card-wrap {
+        background: url(images/bg-main-desktop.png) top center no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20rem;
+    }
+
+    .card-container {
+        width: 30rem;
+        height: 20rem;
+        position: relative;
+    }
+
+    .card {
+        border-radius: 0.75rem;
+        font-size: 0.75rem;
+        height: 12rem;
+        width: 21rem;
+    }
+
+    .front {
+        top: 50%;
+        right: 20%;
+        z-index: 3;
+    }
+
+    .back {
+        top: 10%;
+        right: 0%;
+    }
+
+    .card-number {
+        font-size: 1.2rem;
+    }
+
+
+}
+
+@media screen and (max-width: 375px) {
+
+    .card-wrap {
+        background: url(images/bg-main-mobile.png) no-repeat top center;
+    }
+}
